@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+h1{
+    color: red;
+    background-color: yellow;
+    width: 100%;
+    min-height: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+p{
+    color: green;
+    font-style: italic;
+    font-size: 20px;
+}
+strong{
+    margin: 10px;
+}
+button{
+    margin: 30px;
+}
+#bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

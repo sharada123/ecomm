@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+    <h1>Templates as a response</h1>
+   <!-- <p>This is your paragraph tag</p>-->
+    <p>{{greet}}</p>
+    {% comment %}
+    {% if x > y %}
+        <p>In if block</p>
+        <p>{{x}} is greater</p>
+    {% else %}
+        <p>In else block</p>
+        <p>{{y}} is greater</p>
+    {% endif %}
+   
+    {% for x in l %}
+        <p>{{x}}</p>
+    {% endfor %}
+    {% endcomment %}
+    {% for x in products %}
+        <!--<p>{{x}}</p>-->
+        <!--<strong>ID:</strong>&nbsp;&nbsp;&nbsp;{{forloop.revcounter}}<br>-->
+        <strong>ID:</strong>&nbsp;&nbsp;&nbsp;{{forloop.counter}}<br>
+        <strong>Name:</strong>&nbsp;&nbsp;&nbsp;{{x.name}}<br>
+        <strong>Category:</strong>&nbsp;&nbsp;&nbsp;{{x.cat}}<br>
+        <strong>Price:</strong>&nbsp;&nbsp;&nbsp;{{x.price}}<br>
+        <hr>
+
+    {% endfor %}
+    <button onclick="greet()">click me</button>
+    <br>
+    <img src="{% static 'images/fsd.jpg' %}" alt="fsd" width="350px" height="350px"/>
+    <script src="{% static 'js/main.js' %}" ></script>
+</body>
+</html>
