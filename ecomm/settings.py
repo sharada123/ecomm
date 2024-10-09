@@ -27,7 +27,13 @@ SECRET_KEY = 'django-insecure-gcgb-w$@p!6%&9#_8=p8mgcaa$@f*2pz5f_p-kt*n#cr#yyg4p
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#Email settings
+EMAIL_HOST="smtp.gmail.com" #smtp=simple mail transfer protocol
+EMAIL_HOST_USER="sharadagadadhe111@gmail.com" #sender
+EMAIL_HOST_PASSWORD="xrpgnhncaljsefjf"
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 
 # Application definition
 
@@ -76,14 +82,23 @@ WSGI_APPLICATION = 'ecomm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ecomm57',
+        'HOST':'localhost',
+        'USER':'root',
+        'PASSWORD':'root',
+        'PORT':'3306'
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -122,6 +137,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[
         os.path.join(BASE_DIR,'static')
         ]
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
